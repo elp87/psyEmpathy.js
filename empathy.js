@@ -2,16 +2,17 @@
  * Created by elp on 04.12.13.
  */
 
-function Testing() {
+function Testing(arr) {
     var _honesty;
     var _testValue;
-    _ctor(this);
+    _ctor(this, arr);
 
-    function _ctor(context) {
+    function _ctor(context, arr) {
         context.SIGNIFICANT_QUESTS = [2, 5, 8, 9, 10, 12, 13, 15, 16, 19, 21, 22, 24, 25, 26, 27, 29, 32];
         context.DONT_KNOW_HONESTY = [3, 9, 11, 13, 28, 36];
         context.YES_HONESTY = [11, 13, 15, 27];
-        context.answers = [];
+        if (arr == undefined) { context.answers = []; }
+        else {context.answers = arr; }
         context.descriptionsList;
         context.curAnswerNumber = 0;
 
@@ -30,7 +31,6 @@ function Testing() {
                 xhr.onreadystatechange = function() {};
             }
         }
-
         xhr.send('');
     }
 
@@ -95,9 +95,6 @@ function Quests() {
                 xhr.onreadystatechange = function() {};
             }
         }
-
         xhr.send();
     }
-
-
 }
